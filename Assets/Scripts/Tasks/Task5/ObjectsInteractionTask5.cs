@@ -19,6 +19,12 @@ public class ObjectsInteractionTask5 : MonoBehaviour
         Shelf1.ItemSpawned += OnItemSpawned;
         Shelf2.ItemSpawned += OnItemSpawned;
     }
+
+    private void OnDisable()
+    {
+        Shelf1.ItemSpawned -= OnItemSpawned;
+        Shelf2.ItemSpawned -= OnItemSpawned;
+    }
     
     private void OnItemSpawned()
     {
